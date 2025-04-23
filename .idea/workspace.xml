@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e893309b-d391-4670-9612-ffd21b643b55" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +27,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "HTTP Request.generated-requests | #1.executor": "Run",
+    "HTTP Request.generated-requests | #2.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.BlackBlazeApplication.executor": "Debug",
     "git-widget-placeholder": "main",
@@ -40,7 +48,13 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.BlackBlazeApplication">
+    <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="test" />
       <method v="2">
@@ -62,6 +76,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests | #1" />
+        <item itemvalue="HTTP Request.generated-requests | #2" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -81,7 +101,7 @@
       <updated>1745419523556</updated>
       <workItem from="1745419524988" duration="4007000" />
       <workItem from="1745428770174" duration="137000" />
-      <workItem from="1745428920694" duration="1485000" />
+      <workItem from="1745428920694" duration="2284000" />
     </task>
     <servers />
   </component>
