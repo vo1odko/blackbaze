@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: head">
+    <title>Услуги | BlackBlazeCar</title>
+</head>
+
+<body>
+    
+    <div th:replace="fragments/header :: header"></div>
+
+    
+    <main class="services-page">
+        <h1>Наши услуги</h1>
+        
+        <div class="service-categories">
+            
+            <div class="service-category" th:each="category : ${serviceCategories}">
+                <h2 th:text="${category.name}">Тонировка</h2>
+                <div class="service-items">
+                    <div class="service-item" th:each="service : ${category.services}">
+                        <img th:src="@{'/images/' + ${service.imageUrl}}" 
+                             th:alt="${service.name}">
+                        <h3 th:text="${service.name}">Тонировка стёкол</h3>
+                        <p th:text="${service.description}">Полное затемнение с гарантией</p>
+                        <p class="price" th:text="'от ' + ${service.price} + ' ₽'">от 15000 ₽</p>
+                        <a th:href="@{'/contacts?service=' + ${service.id}}" 
+                           class="btn">Записаться</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+    <div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>
