@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e893309b-d391-4670-9612-ffd21b643b55" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/blackblaze-detailing/src/main/resources/templates/tonirovka.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/src/main/java/com/blackblaze/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/src/main/java/com/blackblaze/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/src/main/java/com/blackblaze/controller/PagesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/src/main/java/com/blackblaze/controller/PagesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/target/classes/com/blackblaze/controller/PagesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/target/classes/com/blackblaze/controller/PagesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.md" beforeDir="false" afterPath="$PROJECT_DIR$/test.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +22,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -36,6 +32,7 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2w8O1mLdgylqIDKC6huF6mcEGHk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,6 +46,7 @@
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.BlackBlazeApplication.executor": "Debug",
     "git-widget-placeholder": "main",
@@ -99,14 +97,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -119,6 +109,7 @@
       <workItem from="1745428770174" duration="137000" />
       <workItem from="1745428920694" duration="2530000" />
       <workItem from="1745445000402" duration="7418000" />
+      <workItem from="1745491278703" duration="17000" />
     </task>
     <servers />
   </component>
