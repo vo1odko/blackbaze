@@ -6,11 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PagesController {
 
-    @GetMapping(value = {"", "/"})
-    public String getIndexPage() {
-        return "index";
-    }
-
     @GetMapping("/#services")
     public String getAdminServicesPage() {
         return "admin/services";
@@ -25,6 +20,6 @@ public class PagesController {
 
     @GetMapping("/services/coating")
     public String getTestPage() {
-        return "admin/contacts";
+        return "admin/services";
     }
 }

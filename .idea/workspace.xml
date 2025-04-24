@@ -5,19 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e893309b-d391-4670-9612-ffd21b643b55" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blackblaze-detailing/src/main/resources/templates/tonirovka.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/src/main/java/com/blackblaze/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/src/main/java/com/blackblaze/controller/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/src/main/resources/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/src/main/resources/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/src/main/resources/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/src/main/resources/static/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/src/main/resources/templates/fragments/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/src/main/resources/templates/fragments/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/target/classes/com/blackblaze/controller/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/target/classes/com/blackblaze/controller/HelloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/src/main/java/com/blackblaze/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/src/main/java/com/blackblaze/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/src/main/java/com/blackblaze/controller/PagesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/src/main/java/com/blackblaze/controller/PagesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blackblaze-detailing/target/classes/com/blackblaze/controller/PagesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/blackblaze-detailing/target/classes/com/blackblaze/controller/PagesController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,29 +40,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #2.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.BlackBlazeApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Владимир/Documents/GitHub/test&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.language.and.region&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "HTTP Request.generated-requests | #1.executor": "Run",
+    "HTTP Request.generated-requests | #2.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.BlackBlazeApplication.executor": "Debug",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Владимир/Documents/GitHub/test",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.language.and.region",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Spring Boot.BlackBlazeApplication">
     <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" requestIdentifier="#1" runType="Run single request">
       <method v="2" />
@@ -110,7 +118,7 @@
       <workItem from="1745419524988" duration="4007000" />
       <workItem from="1745428770174" duration="137000" />
       <workItem from="1745428920694" duration="2530000" />
-      <workItem from="1745445000402" duration="3257000" />
+      <workItem from="1745445000402" duration="7418000" />
     </task>
     <servers />
   </component>
