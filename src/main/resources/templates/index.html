@@ -67,7 +67,13 @@
             </div>
         </div>
     </section>
-
+    
+    <ul>
+        <li th:each="item : ${test}">
+            <span th:text="${item.id}">Имя</span> —
+            <span th:text="${item.value}">Значение</span>
+        </li>
+    </ul>
     
     <section id="portfolio">
         <h2>Примеры работ</h2>
