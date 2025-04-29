@@ -17,6 +17,16 @@
     <section id="services">
         <h2>Наши услуги</h2>
         <div class="services-grid">
+
+
+            <div th:each="service : ${services}" class="service-card">
+                <img th:src="${service.imagePath}" alt="Service Image">
+                <h3 th:text="${service.name}"></h3>
+                <p th:text="${service.description}"></p>
+                <a th:href="@{/services/{id}(id=${service.id})}" class="btn">Подробнее</a>
+            </div>
+
+
             <div class="service">
                 <a th:href="@{/services/tonirovka}">
                     <img th:src="@{/images/tinting.png}" alt="Тонировка стёкол" />
