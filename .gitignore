@@ -46,4 +46,3 @@ build/
 /platform.tar.gz
 m2
 /Web/package-lock.json
-/.idea/
