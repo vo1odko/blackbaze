@@ -114,8 +114,69 @@ section {
   padding: 50px 0; /* Паддинг сверху и снизу для секции */
 }
 
+
+/* Стили для секции portfolio */
 #portfolio {
   background-color: #333333; /* Серый цвет для секций */
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.portfolio-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.portfolio-item {
+  flex: 1 1 calc(25% - 20px);
+  min-width: 200px;
+  max-width: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 900px) {
+  .portfolio-item {
+    flex: 1 1 calc(33.333% - 20px);
+  }
+}
+
+/* Адаптивность для небольших планшетов и больших мобильных */
+@media (max-width: 700px) {
+  .portfolio-item {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 500px) {
+  .portfolio-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
 
 #contacts {
@@ -235,4 +296,174 @@ iframe {
 
 .scroll-to-top:hover {
   background-color: #939393; /* Изменение цвета при наведении */
+}
+
+
+
+
+/* Стили для модального окна */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow: auto;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  margin-top: 30px;
+}
+
+.modal-content img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  animation: zoomIn 0.3s;
+}
+
+@keyframes zoomIn {
+  from {transform: scale(0.9);}
+  to {transform: scale(1);}
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #dc2424;
+  transform: scale(1.2);
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transform: translateY(-50%);
+  transition: 0.3s;
+  padding: 20px;
+}
+
+.nav-arrow:hover {
+  color: #dc2424;
+  transform: translateY(-50%) scale(1.2);
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+.caption-container {
+  text-align: center;
+  padding: 10px 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  max-width: 80%;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+#caption {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Анимация при переключении фото */
+.fade {
+  animation: fade 0.5s;
+}
+
+@keyframes fade {
+  from {opacity: 0.5;}
+  to {opacity: 1;}
+}
+
+
+
+
+/***** Стили для шаблона услуг********/
+.service-detail {
+  padding: 50px 20px;
+  background-color: #1a1a1a;
+}
+
+.service-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.service-info {
+  flex: 1;
+}
+
+.service-info h1 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.service-info .description {
+  color: #ddd;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.service-info .details {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.service-info .details p {
+  color: #fff;
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.comparison-container {
+  flex: 1;
+  min-width: 0;
+}
+
+.juxtapose {
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 900px) {
+  .service-container {
+    flex-direction: column;
+  }
 }

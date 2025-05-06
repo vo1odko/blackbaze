@@ -78,3 +78,65 @@ window.onload = function () {
 };
 
 window.onresize = checkScreenSize; // Проверяем размер окна при изменении размера экрана
+
+
+
+// Глобальные переменные для галереи
+let currentSlideIndex = 0;
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+// Открытие модального окна
+function openModal(index) {
+    currentSlideIndex = index;
+    const modal = document.getElementById('portfolioModal');
+    const modalImg = document.getElementById('modalImage');
+    const captionText = document.getElementById('caption');
+
+    modal.style.display = "block";
+    modalImg.src = portfolioItems[index].querySelector('img').src;
+    captionText.innerHTML = portfolioItems[index].querySelector('img').alt;
+}
+
+// Закрытие модального окна
+function closeModal() {
+    document.getElementById('portfolioModal').style.display = "none";
+}
+
+// Переключение между фото
+function changeSlide(n) {
+    currentSlideIndex += n;
+
+    // Зацикливаем переключение
+    if (currentSlideIndex >= portfolioItems.length) {
+        currentSlideIndex = 0;
+    } else if (currentSlideIndex < 0) {
+        currentSlideIndex = portfolioItems.length - 1;
+    }
+
+    const modalImg = document.getElementById('modalImage');
+    const captionText = document.getElementById('caption');
+    modalImg.src = portfolioItems[currentSlideIndex].querySelector('img').src;
+    captionText.innerHTML = portfolioItems[currentSlideIndex].querySelector('img').alt;
+}
+
+// Закрытие по клику вне изображения
+document.addEventListener('click', function(event) {
+    const modal = document.getElementById('portfolioModal');
+    if (event.target === modal) {
+        closeModal();
+    }
+});
+
+// Закрытие по клавише Esc
+document.onkeydown = function(event) {
+    const modal = document.getElementById('portfolioModal');
+    if (event.key === "Escape" && modal.style.display === "block") {
+        closeModal();
+    }
+    if (event.key === "ArrowLeft" && modal.style.display === "block") {
+        changeSlide(-1);
+    }
+    if (event.key === "ArrowRight" && modal.style.display === "block") {
+        changeSlide(1);
+    }
+}

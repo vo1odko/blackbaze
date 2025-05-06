@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
-<div th:replace="~{fragments/header :: head}"></div>
+<head th:replace="~{fragments/header :: head}"></head>
 <body>
-<div th:replace="~{fragments/header :: head}"></div>
+<div th:replace="~{fragments/header :: header}"></div>
 <section id="about">
 	 <div class="about-section">
 			<p>Ваш автомобиль затемним, почистим, дадим блеск, защитим.</p>
@@ -12,12 +12,16 @@
 <section id="services">
 	 <h2>Наши услуги</h2>
 	 <div class="services-grid">
+
+
 			<div th:each="service : ${services}" class="service-card">
 				 <img th:src="${service.imageUrl}" alt="Service Image">
 				 <h3 th:text="${service.name}"></h3>
 				 <p th:text="${service.description}"></p>
 				 <a th:href="@{/templates/advice/{id}(id=${service.id})}" class="btn">Подробнее</a>
 			</div>
+
+
 			<div class="service">
 				 <a th:href="@{/advice/tonirovka}">
 						<img th:src="@{/images/tinting.png}" alt="Тонировка стёкол"/>
@@ -69,20 +73,43 @@
 	 </div>
 </section>
 
-<ul>
-	 <li th:each="item : ${test}">
-			<span th:text="${item.id}">Имя</span> —
-			<span th:text="${item.value}">Значение</span>
-	 </li>
-</ul>
-
 <section id="portfolio">
-	 <h2>Примеры работ</h2>
-	 <div class="portfolio-item" th:each="project : ${projects}">
-			<h3 th:text="${project.title}">Проект 1</h3>
-			<p th:text="${project.description}">Описание проекта</p>
-	 </div>
+	<h2>Примеры работ</h2>
+		<div class="portfolio-grid">
+			<div class="portfolio-item" onclick="openModal(0)">
+				<img th:src="@{/images/primer tonirovka.jpg}" alt="Пример тонировки">
+			</div>
+			<div class="portfolio-item" onclick="openModal(1)">
+				<img th:src="@{/images/primer podsvetka.jpg}" alt="Пример подсветки">
+			</div>
+			<div class="portfolio-item" onclick="openModal(2)">
+				<img th:src="@{/images/primer bronya.jpg}" alt="Пример брони">
+			</div>
+			<div class="portfolio-item" onclick="openModal(3)">
+				<img th:src="@{/images/primer polirovka.jpg}" alt="Пример полировки">
+			</div>
+			<div class="portfolio-item" onclick="openModal(4)">
+				<img th:src="@{/images/primer himchistka.jpg}" alt="Пример химчистки">
+			</div>
+			<div class="portfolio-item" onclick="openModal(5)">
+				<img th:src="@{/images/primer shumka.jpg}" alt="Пример шумоизоляции">
+			</div>
+		</div>
 </section>
+
+<div id="portfolioModal" class="modal">
+	<span class="close" onclick="closeModal()">&times;</span>
+	<span class="nav-arrow prev" onclick="changeSlide(-1)">&#10094;</span>
+	<span class="nav-arrow next" onclick="changeSlide(1)">&#10095;</span>
+	<div class="modal-content">
+		<img id="modalImage" src="" alt="">
+	</div>
+	<div class="caption-container">
+		<p id="caption"></p>
+	</div>
+</div>
+
+
 
 
 <section id="contacts">
@@ -95,10 +122,7 @@
 				 <p><strong>Телефон:</strong></p>
 				 <p>+7 (929) 570-00-29</p>
 			</div>
-			<div>
-				 <p><strong>Email:</strong></p>
-				 <p>info@blackblazecar.ru</p>
-			</div>
+
 	 </div>
 	 
 	 <iframe src="https://yandex.ru/map-widget/v1/org/blackblazecar/194778747774/?ll=38.279254%2C56.068228&z=16"

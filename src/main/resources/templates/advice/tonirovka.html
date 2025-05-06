@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
-	 <meta charset="UTF-8">
-	 <title>Привет, мир!</title>
+	<meta charset="UTF-8">
+	<title>Тонировка стёкол | BlackBlazeCar</title>
+	<link th:href="@{/css/styles.css}" rel="stylesheet">
 </head>
 <body>
-<h1>Hello, World!</h1>
+<div th:replace="~{service-template :: service-detail}">
+	<!-- Данные для конкретной услуги -->
+	<h1 th:text="'Тонировка стёкол'">Название услуги</h1>
+	<p class="description" th:text="'Профессиональная тонировка стекол автомобиля с использованием качественных пленок...'">Описание услуги</p>
+	<div class="details">
+		<p><strong>Примерное время работы:</strong> <span th:text="'3-4 часа'">2-3 часа</span></p>
+		<p><strong>Стоимость:</strong> <span th:text="'от 7000 руб.'">от 5000 руб.</span></p>
+	</div>
+	<!-- ID для Juxtapose (можно получить на сайте knightlab.com) -->
+	<span th:text="'abc123'" th:remove="tag"></span>
+</div>
 </body>
 </html>

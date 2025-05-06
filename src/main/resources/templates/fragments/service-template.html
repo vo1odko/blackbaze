@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: head}">
+    <title th:text="${serviceName} + ' | BlackBlazeCar'">Название услуги</title>
+</head>
+<body>
+<!-- Шапка -->
+<div th:replace="~{fragments/header :: header}"></div>
+
+<!-- Основной контент -->
+<section class="service-detail">
+    <div class="service-container">
+        <div class="service-info">
+            <h1 th:text="${serviceName}">Название услуги</h1>
+            <p class="description" th:text="${serviceDescription}">Описание услуги</p>
+            <div class="details">
+                <p><strong>Примерное время работы:</strong> <span th:text="${serviceDuration}">2-3 часа</span></p>
+                <p><strong>Стоимость:</strong> <span th:text="${servicePrice}">от 5000 руб.</span></p>
+            </div>
+        </div>
+
+        <div class="comparison-container">
+            <iframe class="juxtapose"
+                    width="100%"
+                    height="500"
+                    th:src="'https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=' + ${comparisonId}">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Секция услуг -->
+<section id="services">
+    <h2>Наши услуги</h2>
+    <div class="services-grid" th:replace="~{index :: #services}"></div>
+</section>
+
+<!-- Контакты -->
+<section id="contacts" th:replace="~{index :: #contacts}"></section>
+
+<!-- Подвал -->
+<div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>
