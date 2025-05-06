@@ -7,7 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class AdviceService {
@@ -32,8 +34,8 @@ public class AdviceService {
         adviceRepository.deleteById(id);
     }
 
-    public Object getAdviceForPage(String page) {
-        return null;
+    public Map<String, String> getAdviceForPage(String page) {
+        return Map.of("serviceName", page, "serviceDescription", page, "serviceDuration", page, "servicePrice", page);
     }
 
     public Object getAllCase() {
