@@ -1,7 +1,6 @@
 package com.blackblaze.service;
 
 import com.blackblaze.model.AdviceEntity;
-import com.blackblaze.model.CaseEntity;
 import com.blackblaze.repository.AdviceRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,15 +9,15 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class AdviceService {
-    private final Logger logger;
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private final AdviceRepository adviceRepository;
 
-    public AdviceService(AdviceRepository serviceRepository) {
-        this.logger = LoggerFactory.getLogger(this.getClass());
-        this.adviceRepository = serviceRepository;
+    public AdviceService(AdviceRepository adviceRepository) {
+        this.adviceRepository = adviceRepository;
     }
 
     public List<AdviceEntity> getAllServices() {
@@ -29,20 +28,44 @@ public class AdviceService {
         return adviceRepository.findById(id).orElse(null);
     }
 
-
     public void deleteService(Long id) {
+        logger.info("Deleting service with ID: {}", id);
         adviceRepository.deleteById(id);
     }
 
     public Map<String, String> getAdviceForPage(String page) {
-        return Map.of("serviceName", page, "serviceDescription", page, "serviceDuration", page, "servicePrice", page);
+        logger.info("Searching for service with name: {}", page);
+        Optional<AdviceEntity> serviceOpt = adviceRepository.findByServiceName(page);
+
+        if (serviceOpt.isEmpty()) {
+            logger.warn("Service not found for page: {}", page);
+            return Map.of(
+                    "serviceName", "Услуга не найдена",
+                    "serviceDescription", "Описание недоступно",
+                    "serviceDuration", "Н/Д",
+                    "servicePrice", "Н/Д",
+                    "comparisonId", ""
+            );
+        }
+
+        AdviceEntity service = serviceOpt.get();
+        logger.info("Found service: {}", service.getServiceName());
+
+        Map<String, String> data = new HashMap<>();
+        data.put("serviceName", service.getServiceName());
+        data.put("serviceDescription", service.getServiceDescription());
+        data.put("serviceDuration", service.getServiceDuration());
+        data.put("servicePrice", service.getServicePrice());
+        data.put("comparisonId", service.getComparisonId());
+
+        return data;
     }
 
-    public Object getAllCase() {
+    public List<AdviceEntity> getAllCase() {
         return adviceRepository.findAll();
     }
 
-    public Object getCaseById(Long caseId) {
+    public AdviceEntity getCaseById(Long caseId) {
         return adviceRepository.findById(caseId).orElse(null);
     }
 }

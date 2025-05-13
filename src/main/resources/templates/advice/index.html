@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
-<head>
-	 <meta charset="UTF-8">
-	 <title th:text="${serviceName} + ' | BlackBlazeCar'">BlackBlazeCar</title>
-	 <link th:href="@{/css/styles.css}" rel="stylesheet">
-</head>
+<div th:replace="~{fragments/header :: full-header}"></div>
 <body>
 <div th:replace="~{fragments/advice-detail :: service-detail}"></div>
+<div th:replace="~{fragments/footer :: footer}"></div>
 </body>
 </html>

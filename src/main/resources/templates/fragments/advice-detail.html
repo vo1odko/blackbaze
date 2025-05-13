@@ -1,6 +1,5 @@
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <div th:fragment="service-detail">
-	 <div th:replace="~{fragments/header :: header}"></div>
 	 <section class="service-detail">
 			<div class="service-container">
 				 <div class="service-info">
@@ -15,7 +14,8 @@
 						<iframe class="juxtapose"
 										width="100%"
 										height="500"
-										th:src="'https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=' + ${comparisonId}">
+										th:src="'https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid='
+										+ ${comparisonId}">
 						</iframe>
 				 </div>
 			</div>
@@ -23,6 +23,5 @@
 	 <section id="services">
 			<div class="services-grid" th:replace="~{index :: #services}"></div>
 	 </section>
-	 <div th:replace="~{fragments/footer :: footer}"></div>
 	 <section id="contacts" th:replace="~{index :: #contacts}"></section>
 </div>

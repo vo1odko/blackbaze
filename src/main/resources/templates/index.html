@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments/header :: head}"></head>
-<!--<div th:replace="~{fragments/header :: header}"></div>-->
+<div th:replace="~{fragments/header :: full-header}"></div>
 <body>
 <section id="about">
 	 <div class="about-section">
@@ -12,16 +11,6 @@
 <section id="services">
 	 <h2>Наши услуги</h2>
 	 <div class="services-grid">
-			
-			
-			<div th:each="service : ${services}" class="service-card">
-				 <img th:src="${service.imageUrl}" alt="Service Image">
-				 <h3 th:text="${service.name}"></h3>
-				 <p th:text="${service.description}"></p>
-				 <a th:href="@{/templates/advice/{id}(id=${service.id})}" class="btn">Подробнее</a>
-			</div>
-			
-			
 			<div class="service">
 				 <a th:href="@{/advice/tonirovka}">
 						<img th:src="@{/images/tinting.png}" alt="Тонировка стёкол"/>
@@ -120,7 +109,6 @@
 				 <p><strong>Телефон:</strong></p>
 				 <p>+7 (929) 570-00-29</p>
 			</div>
-	 
 	 </div>
 	 
 	 <iframe src="https://yandex.ru/map-widget/v1/org/blackblazecar/194778747774/?ll=38.279254%2C56.068228&z=16"
