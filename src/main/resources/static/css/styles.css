@@ -452,18 +452,18 @@ iframe {
   margin: 10px 0;
 }
 
-.comparison-container {
-  flex: 1;
-  min-width: 0;
-}
+/*.comparison-container {*/
+/*  flex: 1;*/
+/*  min-width: 0;*/
+/*}*/
 
-.juxtapose {
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-}
+/*.juxtapose {*/
+/*  border-radius: 10px;*/
+/*  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);*/
+/*}*/
 
-@media (max-width: 900px) {
-  .service-container {
-    flex-direction: column;
-  }
-}
+/*@media (max-width: 900px) {*/
+/*  .service-container {*/
+/*    flex-direction: column;*/
+/*  }*/
+/*}*/

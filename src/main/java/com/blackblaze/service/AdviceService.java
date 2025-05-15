@@ -36,7 +36,6 @@ public class AdviceService {
     public Map<String, String> getAdviceForPage(String page) {
         logger.info("Searching for service with name: {}", page);
         Optional<AdviceEntity> serviceOpt = adviceRepository.findById(page);
-
         if (serviceOpt.isEmpty()) {
             logger.warn("Service not found for page: {}", page);
             return Map.of(
@@ -44,7 +43,9 @@ public class AdviceService {
                     "serviceDescription", "Описание недоступно",
                     "serviceDuration", "Н/Д",
                     "servicePrice", "Н/Д",
-                    "comparisonId", ""
+                    "comparisonId", "",
+                    "img1","/images/test-1.jpg",
+                    "img2","/images/test-2.jpg"
             );
         }
 
@@ -57,7 +58,8 @@ public class AdviceService {
         data.put("serviceDuration", service.getServiceDuration());
         data.put("servicePrice", service.getServicePrice());
         data.put("comparisonId", service.getComparisonId());
-
+        data.put("img1","/images/test-1.jpg");
+        data.put("img2","/images/test-2.jpg");
         return data;
     }
 

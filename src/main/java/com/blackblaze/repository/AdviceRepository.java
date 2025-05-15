@@ -8,5 +8,4 @@ import java.util.Optional;
 
 @Repository
 public interface AdviceRepository extends JpaRepository<AdviceEntity, String> {
-    Optional<AdviceEntity> findByServiceName(String serviceName);
 }
