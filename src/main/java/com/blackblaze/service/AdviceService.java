@@ -24,18 +24,18 @@ public class AdviceService {
         return adviceRepository.findAll();
     }
 
-    public AdviceEntity getServiceById(Long id) {
+    public AdviceEntity getServiceById(String id) {
         return adviceRepository.findById(id).orElse(null);
     }
 
-    public void deleteService(Long id) {
+    public void deleteService(String id) {
         logger.info("Deleting service with ID: {}", id);
         adviceRepository.deleteById(id);
     }
 
     public Map<String, String> getAdviceForPage(String page) {
         logger.info("Searching for service with name: {}", page);
-        Optional<AdviceEntity> serviceOpt = adviceRepository.findByServiceName(page);
+        Optional<AdviceEntity> serviceOpt = adviceRepository.findById(page);
 
         if (serviceOpt.isEmpty()) {
             logger.warn("Service not found for page: {}", page);
@@ -65,7 +65,7 @@ public class AdviceService {
         return adviceRepository.findAll();
     }
 
-    public AdviceEntity getCaseById(Long caseId) {
+    public AdviceEntity getCaseById(String caseId) {
         return adviceRepository.findById(caseId).orElse(null);
     }
 }
