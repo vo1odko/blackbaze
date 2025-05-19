@@ -499,3 +499,30 @@ iframe {
     font-size: 0.9rem; /* Уменьшаем размер текста */
   }
 }
+
+
+/*оформление кнопки позвонить*/
+.call-button-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.call-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #dc2424;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+}
+
+.call-button:hover {
+  background-color: #b31e1e;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
