@@ -22,6 +22,6 @@ public class AdviceController {
     public String getAdvicePage(@PathVariable(name = "page") String page, Model model) {
         Map<String, String> data = adviceService.getAdviceForPage(page);
         model.addAllAttributes(data);
-        return "advice/index";
+        return "advice/index-advice";
     }
 }

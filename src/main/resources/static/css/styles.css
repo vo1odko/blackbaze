@@ -410,7 +410,7 @@ iframe {
 
 
 
-/***** Стили для шаблона услуг********/
+/***** Стили для шаблона услуг ********/
 .service-detail {
   padding: 50px 20px;
   background-color: #1a1a1a;
@@ -425,12 +425,14 @@ iframe {
 
 .service-info {
   flex: 1;
+  min-width: 300px;
 }
 
 .service-info h1 {
   color: #fff;
   margin-bottom: 20px;
   font-size: 2.5rem;
+  line-height: 1.2;
 }
 
 .service-info .description {
@@ -444,6 +446,11 @@ iframe {
   background-color: #333;
   padding: 20px;
   border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.service-info .details:hover {
+  background-color: #3a3a3a;
 }
 
 .service-info .details p {
@@ -452,18 +459,43 @@ iframe {
   margin: 10px 0;
 }
 
-/*.comparison-container {*/
-/*  flex: 1;*/
-/*  min-width: 0;*/
-/*}*/
+.comparator-wrapper {
+  flex: 1;
+  min-width: 300px;
+  align-self: center;
+}
 
-/*.juxtapose {*/
-/*  border-radius: 10px;*/
-/*  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);*/
-/*}*/
 
-/*@media (max-width: 900px) {*/
-/*  .service-container {*/
-/*    flex-direction: column;*/
-/*  }*/
-/*}*/
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .service-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 15px; /* Добавлено для отступов по краям */
+  }
+
+  .service-info, .comparator-wrapper {
+    min-width: 100%; /* Занимаем всю ширину */
+    width: 100%;
+  }
+
+  .img-comp-container {
+    max-width: 100%; /* Убираем ограничение по ширине */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    overflow-x: hidden; /* Предотвращаем горизонтальный скролл */
+  }
+
+  .service-info h1 {
+    font-size: 1.8rem; /* Уменьшаем размер заголовка */
+  }
+
+  .service-info .description,
+  .service-info .details p {
+    font-size: 0.9rem; /* Уменьшаем размер текста */
+  }
+}

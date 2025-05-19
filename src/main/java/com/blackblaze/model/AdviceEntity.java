@@ -19,6 +19,8 @@ public class AdviceEntity {
     private String serviceDuration;
     @Column(name = "service_price")
     private String servicePrice;
-    @Column(name = "comparison_id")
-    private String comparisonId;
+    @Column(name = "img_before")
+    private String imgBefore;
+    @Column(name = "img_after")
+    private String imgAfter;
 }

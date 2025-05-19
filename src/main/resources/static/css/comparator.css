@@ -1,29 +1,96 @@
-/* comparator.css */
-.img-comp-container {
-    position: relative;
-    height: 300px;
-    width: 600px;
+:root {
+    --slider-size: 20px;
+    --slider-color: #ee7575;
+    --slider-opacity: 0.7;
+    --comparator-max-width: 100%;
+    --comparator-aspect-ratio: 56.25%; /* 16:9 ratio */
 }
 
-.img-comp-img {
+/* Основной контейнер сравнения */
+.img-comp-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: var(--comparator-aspect-ratio);
+    max-width: var(--comparator-max-width);
+    margin: 0 auto;
+    overflow: hidden;
+    touch-action: none; /* Блокируем стандартные touch-события */
+}
+
+/* Стили для базового и overlay изображений */
+.img-comp-base, .img-comp-overlay {
     position: absolute;
-    width: auto;
-    height: auto;
+    top: 0;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
-.img-comp-img img {
+.img-comp-base img, .img-comp-overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     display: block;
-    vertical-align: middle;
+    user-select: none;
+    pointer-events: none; /* Блокируем события мыши на изображениях */
 }
 
+/* Overlay изображение с обрезкой справа */
+.img-comp-overlay {
+    right: 0;
+    clip-path: inset(0 0 0 50%); /* Начальная обрезка 50% */
+}
+
+/* Контейнер для слайдера (невидимый) */
+.img-comp-slider-wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 0;
+    z-index: 10;
+    transform: translateX(-50%);
+    pointer-events: none; /* События проходят сквозь wrapper */
+}
+
+/* Видимая часть слайдера */
 .img-comp-slider {
     position: absolute;
-    z-index: 9;
-    cursor: ew-resize;
-    width: 40px;
-    height: 40px;
-    background-color: #2196F3;
-    opacity: 0.7;
+    top: 50%;
+    left: 0;
+    width: var(--slider-size);
+    height: var(--slider-size);
+    background-color: var(--slider-color);
+    opacity: var(--slider-opacity);
     border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: ew-resize;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.2s ease;
+    touch-action: none;
+    z-index: 11;
+    pointer-events: auto; /* Разрешаем события только на слайдере */
+}
+
+/* Состояния слайдера */
+.img-comp-slider:hover {
+    opacity: 0.9;
+}
+
+.img-comp-slider:active {
+    opacity: 1;
+    cursor: grabbing;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+    :root {
+        --slider-size: 30px; /* Увеличиваем для удобства на touch-устройствах */
+    }
+
+    .img-comp-slider {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Более заметная тень */
+    }
 }

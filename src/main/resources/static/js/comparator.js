@@ -1,60 +1,68 @@
 function initComparisons() {
-    var x, i;
-    x = document.getElementsByClassName("img-comp-overlay");
-    for (i = 0; i < x.length; i++) {
-        compareImages(x[i]);
-    }
+    const containers = document.querySelectorAll('.img-comp-container');
 
-    function compareImages(img) {
-        var slider, clicked = 0, w, h;
-        w = img.offsetWidth;
-        h = img.offsetHeight;
-        img.style.width = (w / 2) + "px";
-        slider = document.createElement("DIV");
-        slider.setAttribute("class", "img-comp-slider");
-        img.parentElement.insertBefore(slider, img);
-        slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
-        slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+    containers.forEach(container => {
+        const overlay = container.querySelector('.img-comp-overlay');
+        const slider = container.querySelector('.img-comp-slider');
+        const sliderWrapper = container.querySelector('.img-comp-slider-wrapper');
 
-        slider.addEventListener("mousedown", slideReady);
-        window.addEventListener("mouseup", slideFinish);
-        slider.addEventListener("touchstart", slideReady);
-        window.addEventListener("touchend", slideFinish);
+        let isDragging = false;
+        const sliderWidth = parseInt(getComputedStyle(slider).width);
 
-        function slideReady(e) {
+        // Инициализация позиции
+        const initPosition = container.offsetWidth / 2;
+        sliderWrapper.style.left = `${initPosition}px`;
+        overlay.style.clipPath = `inset(0 0 0 ${initPosition}px)`;
+
+        // Обработчики для мыши
+        slider.addEventListener('mousedown', function(e) {
+            isDragging = true;
+            slider.style.opacity = '0.9';
             e.preventDefault();
-            clicked = 1;
-            window.addEventListener("mousemove", slideMove);
-            window.addEventListener("touchmove", slideMove);
-        }
+        });
 
-        function slideFinish() {
-            clicked = 0;
-        }
+        window.addEventListener('mousemove', function(e) {
+            if (!isDragging) return;
 
-        function slideMove(e) {
-            var pos;
-            if (clicked == 0) return false;
-            pos = getCursorPos(e);
-            if (pos < 0) pos = 0;
-            if (pos > w) pos = w;
-            slide(pos);
-        }
+            const containerRect = container.getBoundingClientRect();
+            let x = e.clientX - containerRect.left;
 
-        function getCursorPos(e) {
-            var a, x = 0;
-            e = (e.changedTouches) ? e.changedTouches[0] : e;
-            a = img.getBoundingClientRect();
-            x = e.pageX - a.left;
-            x = x - window.pageXOffset;
-            return x;
-        }
+            // Ограничение границ с учётом центровки слайдера
+            x = Math.max(sliderWidth/2, Math.min(x, containerRect.width - sliderWidth/2));
 
-        function slide(x) {
-            img.style.width = x + "px";
-            slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
-        }
-    }
+            sliderWrapper.style.left = `${x}px`;
+            overlay.style.clipPath = `inset(0 0 0 ${x}px)`;
+        });
+
+        window.addEventListener('mouseup', function() {
+            isDragging = false;
+            slider.style.opacity = '';
+        });
+
+        // Обработчики для touch
+        slider.addEventListener('touchstart', function(e) {
+            isDragging = true;
+            slider.style.opacity = '0.9';
+            e.preventDefault();
+        });
+
+        window.addEventListener('touchmove', function(e) {
+            if (!isDragging) return;
+
+            const containerRect = container.getBoundingClientRect();
+            let x = e.touches[0].clientX - containerRect.left;
+
+            x = Math.max(sliderWidth/2, Math.min(x, containerRect.width - sliderWidth/2));
+
+            sliderWrapper.style.left = `${x}px`;
+            overlay.style.clipPath = `inset(0 0 0 ${x}px)`;
+        });
+
+        window.addEventListener('touchend', function() {
+            isDragging = false;
+            slider.style.opacity = '';
+        });
+    });
 }
 
 document.addEventListener("DOMContentLoaded", initComparisons);

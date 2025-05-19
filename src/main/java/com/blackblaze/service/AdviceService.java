@@ -43,7 +43,6 @@ public class AdviceService {
                     "serviceDescription", "Описание недоступно",
                     "serviceDuration", "Н/Д",
                     "servicePrice", "Н/Д",
-                    "comparisonId", "",
                     "img1","/images/test-1.jpg",
                     "img2","/images/test-2.jpg"
             );
@@ -57,7 +56,6 @@ public class AdviceService {
         data.put("serviceDescription", service.getServiceDescription());
         data.put("serviceDuration", service.getServiceDuration());
         data.put("servicePrice", service.getServicePrice());
-        data.put("comparisonId", service.getComparisonId());
         data.put("img1","/images/test-1.jpg");
         data.put("img2","/images/test-2.jpg");
         return data;

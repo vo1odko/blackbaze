@@ -1,8 +1,15 @@
 <div th:fragment="cmp(img1, img2)" class="img-comp-container">
-    <div class="img-comp-img">
-        <img th:src="@{${img1}}" width="600" height="300" />
+    <div class="img-comp-base">
+        <img th:src="@{${img1}}"
+             loading="lazy"
+             alt="Изображение до услуги" />
     </div>
-    <div class="img-comp-img img-comp-overlay">
-        <img th:src="@{${img2}}" width="600" height="300" />
+    <div class="img-comp-overlay">
+        <img th:src="@{${img2}}"
+             loading="lazy"
+             alt="Изображение после услуги" />
+    </div>
+    <div class="img-comp-slider-wrapper">
+        <div class="img-comp-slider"></div>
     </div>
 </div>

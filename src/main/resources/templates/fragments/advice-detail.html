@@ -2,29 +2,27 @@
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <body>
 <div th:fragment="service-detail">
-    <link rel="stylesheet" th:href="@{/css/comparator.css}"/>
-    <section class="service-detail">
-        <div class="service-container">
-            <div class="service-info">
-                <h1 th:text="${serviceName}">Название услуги</h1>
-                <p class="description" th:text="${serviceDescription}">Описание услуги</p>
-                <div class="details">
-                    <p><strong>Примерное время работы:</strong> <span th:text="${serviceDuration}">2-3 часа</span></p>
-                    <p><strong>Стоимость:</strong> <span th:text="${servicePrice}">от 5000 руб.</span></p>
-                </div>
-            </div>
-            <div class="comparator-wrapper">
-                <div class="comparison-container"
-                     th:replace="fragments/imgCmp :: cmp(${img1}, ${img2})">
-                </div>
-            </div>
-        </div>
-        <script th:src="@{/js/comparator.js}" defer></script>
-    </section>
-    <section id="services">
-        <div class="services-grid" th:replace="~{index :: #services}"></div>
-    </section>
-    <section id="contacts" th:replace="~{index :: #contacts}"></section>
+	<link rel="stylesheet" th:href="@{/css/comparator.css}"/>
+	<section class="service-detail">
+		<div class="service-container">
+			<div class="service-info">
+				<h1 th:text="${serviceName}">Название услуги</h1>
+				<p class="description" th:text="${serviceDescription}">Описание услуги</p>
+				<div class="details">
+					<p><strong>Примерное время работы:</strong> <span th:text="${serviceDuration}">2-3 часа</span></p>
+					<p><strong>Стоимость:</strong> <span th:text="${servicePrice}">от 5000 руб.</span></p>
+				</div>
+			</div>
+			<div class="comparator-wrapper">
+				<div th:replace="~{fragments/imgCmp :: cmp(${img1}, ${img2})}"></div>
+			</div>
+		</div>
+		<script th:src="@{/js/comparator.js}" defer></script>
+	</section>
+	<section id="services">
+		<div class="services-grid" th:replace="~{index :: #services}"></div>
+	</section>
+	<section id="contacts" th:replace="~{index :: #contacts}"></section>
 </div>
 </body>
 </html>
