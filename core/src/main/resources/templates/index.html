@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="~{fragments/header :: full-header}"></div>
+<body>
+<section id="about">
+    <div class="about-section">
+        <p>Ваш автомобиль затемним, почистим, дадим блеск, защитим.</p>
+        <p>Ваша задача — приехать к нам в гости.</p>
+    </div>
+</section>
+<section id="services">
+    <h2>Наши услуги</h2>
+    <div class="services-grid">
+        <div class="service">
+            <a th:href="@{/advice/tonirovka}">
+                <img th:src="@{/images/tinting.png}" alt="Тонировка стёкол"/>
+            </a>
+            <h3>Тонировка стёкол</h3>
+        </div>
+        <div class="service">
+            <a th:href="@{/advice/polirovka}">
+                <img th:src="@{/images/polisher.png}" alt="Полировка кузова"/>
+            </a>
+            <h3>Полировка кузова</h3>
+        </div>
+        <div class="service">
+            <a th:href="@{/advice/ceramics}">
+                <img th:src="@{/images/ceramics.png}" alt="Керамика"/>
+            </a>
+            <h3>Керамика</h3>
+        </div>
+        <div class="service">
+            <a th:href="@{/advice/armor}">
+                <img th:src="@{/images/armored-film.png}" alt="Бронеплёнка"/>
+            </a>
+            <h3>Бронеплёнка</h3>
+        </div>
+        <div class="service">
+            <a th:href="@{/advice/cleaning}">
+                <img th:src="@{/images/salon-dry-cleaning.png}" alt="Химчистка салона"/>
+            </a>
+            <h3>Химчистка салона</h3>
+        </div>
+        <div class="service">
+            <a th:href="@{/advice/antichrome}">
+                <img th:src="@{/images/antichrome.png}" alt="Антихром"/>
+            </a>
+            <h3>Антихром</h3>
+        </div>
+        <div class="service">
+            <a th:href="@{/advice/noise}">
+                <img th:src="@{/images/noise-insulation.png}" alt="Шумоизоляция"/>
+            </a>
+            <h3>Шумоизоляция</h3>
+        </div>
+        <div class="service">
+            <a th:href="@{/advice/headlights}">
+                <img th:src="@{/images/headlight-restoration.png}" alt="Реставрация фар"/>
+            </a>
+            <h3>Реставрация фар</h3>
+        </div>
+        <div class="service">
+            <a th:href="@{/advice/anti-rain}">
+                <img th:src="@{/images/anti-rain.png}" alt="Антидождь"/>
+            </a>
+            <h3>Антидождь</h3>
+        </div>
+        <div class="service">
+            <a th:href="@{/advice/contour-lighting}">
+                <img th:src="@{/images/contour-lighting.png}" alt="Контутная подсветка"/>
+            </a>
+            <h3>Контурная подсветка</h3>
+        </div>
+        <div class="service">
+            <a th:href="@{/advice/standard-audio-system}">
+                <img th:src="@{/images/standard-audio-system.png}" alt="Замена штатной аудиосистемы"/>
+            </a>
+            <h3>Замена штатной аудиосистемы</h3>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio">
+    <h2>Примеры работ</h2>
+    <div class="portfolio-grid">
+        <div class="portfolio-item" onclick="openModal(0)">
+            <img src="/static/images/primer-tonirovka.jpg" alt="Пример тонировки">
+        </div>
+        <div class="portfolio-item" onclick="openModal(1)">
+            <img src="/static/images/primer-podsvetka.jpg" alt="Пример подсветки">
+        </div>
+        <div class="portfolio-item" onclick="openModal(2)">
+            <img src="/static/images/primer-bronya.jpg" alt="Пример брони">
+        </div>
+        <div class="portfolio-item" onclick="openModal(3)">
+            <img src="/static/images/primer-polirovka.jpg" alt="Пример полировки">
+        </div>
+        <div class="portfolio-item" onclick="openModal(4)">
+            <img src="/static/images/primer-himchistka.jpg" alt="Пример химчистки">
+        </div>
+        <div class="portfolio-item" onclick="openModal(5)">
+            <img src="/static/images/primer-shumka.jpg" alt="Пример шумоизоляции">
+        </div>
+        <div class="portfolio-item" onclick="openModal(6)">
+            <img src="/static/images/primer-polirovka-far.jpg" alt="Пример реставрации фар">
+        </div>
+        <div class="portfolio-item" onclick="openModal(7)">
+            <img src="/static/images/primer-bronirovaniya-far.jpg" alt="Пример бронирования фар">
+        </div>
+    </div>
+</section>
+
+<div id="portfolioModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <span class="nav-arrow prev" onclick="changeSlide(-1)">&#10094;</span>
+    <span class="nav-arrow next" onclick="changeSlide(1)">&#10095;</span>
+    <div class="modal-content">
+        <img id="modalImage" src="" alt="">
+    </div>
+    <div class="caption-container">
+        <p id="caption"></p>
+    </div>
+</div>
+
+
+<section id="contacts">
+    <div class="contact-details">
+        <div>
+            <p><strong>Адрес:</strong></p>
+            <p>д. Огуднево, территория Восток, 3</p>
+        </div>
+        <div>
+            <p><strong>Телефон:</strong></p>
+            <p>+7 (929) 570-00-29</p>
+        </div>
+    </div>
+
+    <div class="call-button-container">
+        <a href="tel:+79295700029" class="call-button">Позвонить</a>
+    </div>
+
+    <iframe src="https://yandex.ru/map-widget/v1/org/blackblazecar/194778747774/?ll=38.279254%2C56.068228&z=16"
+            allowfullscreen="true"></iframe>
+</section>
+<div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>

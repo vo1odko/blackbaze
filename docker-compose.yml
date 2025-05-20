@@ -1,0 +1,66 @@
+name: blackblaze
+services:
+  proxy:
+    container_name: proxy
+    image: blackblaze/proxy
+    build:
+      context: proxy
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 0.0.0.0:80:80
+      - 0.0.0.0:443:80
+    depends_on:
+      - core
+      - cdn
+    networks:
+      - app
+
+  core:
+    container_name: core
+    image: blackblaze/core
+    build:
+      context: core
+      dockerfile: Dockerfile
+    env_file: .env
+    restart: always
+    expose:
+      - 0.0.0.0:8080:8080
+    networks:
+      - app
+
+  cdn:
+    container_name: cdn
+    image: blackblaze/cdn
+    build:
+      context: cdn
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./static:/usr/local/apache2/htdocs/static
+    expose:
+      - 0.0.0.0:8080:8080
+    networks:
+      - app
+
+  psql:
+    container_name: psql
+    image: blackblaze/psql
+    build:
+      context: psql
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      POSTGRES_USER: $DB_USR
+      POSTGRES_PASSWORD: $DB_PASS
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    ports:
+      - 0.0.0.0:5432:5432
+    networks:
+      - app
+
+networks:
+  app:
+    name: app
+    driver: bridge
