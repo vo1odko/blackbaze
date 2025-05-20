@@ -2,7 +2,7 @@ name: blackblaze
 services:
   proxy:
     container_name: proxy
-    image: blackblaze/proxy
+    image: ghcr.io/vo1odko/blackblaze/proxy
     build:
       context: proxy
       dockerfile: Dockerfile
@@ -18,7 +18,7 @@ services:
 
   core:
     container_name: core
-    image: blackblaze/core
+    image: ghcr.io/vo1odko/blackblaze/core
     build:
       context: core
       dockerfile: Dockerfile
@@ -31,7 +31,7 @@ services:
 
   cdn:
     container_name: cdn
-    image: blackblaze/cdn
+    image: ghcr.io/vo1odko/blackblaze/cdn
     build:
       context: cdn
       dockerfile: Dockerfile
@@ -45,7 +45,7 @@ services:
 
   psql:
     container_name: psql
-    image: blackblaze/psql
+    image: ghcr.io/vo1odko/blackblaze/psql
     build:
       context: psql
       dockerfile: Dockerfile
