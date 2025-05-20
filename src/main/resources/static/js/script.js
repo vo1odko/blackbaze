@@ -26,16 +26,29 @@ function toggleMenu() {
     const navbar = document.getElementById('navbar');
     const menuToggle = document.getElementById('menu-toggle');
 
+    // Если меню скрыто (нет класса show) - показываем его
     if (!navbar.classList.contains('show')) {
-        navbar.classList.add('show'); // Добавляем класс для анимации показа
-        navbar.classList.remove('hide'); // Убираем класс скрытия, если он есть
-        menuToggle.innerHTML = '✖'; // Меняем на крестик
-        menuToggle.classList.add('active'); // Добавляем активный класс для кнопки
-    } else {
-        navbar.classList.remove('show'); // Убираем класс показа
-        navbar.classList.add('hide'); // Добавляем класс скрытия для анимации
-        menuToggle.innerHTML = '☰'; // Меняем обратно на три полоски
-        menuToggle.classList.remove('active'); // Убираем активный класс у кнопки
+        navbar.classList.remove('hide');
+        navbar.classList.add('show');
+        navbar.style.display = 'flex'; // Принудительно показываем меню
+        menuToggle.innerHTML = '✖';
+        menuToggle.classList.add('active');
+    }
+    // Если меню показано - скрываем его с анимацией
+    else {
+        navbar.classList.remove('show');
+        navbar.classList.add('hide');
+        menuToggle.innerHTML = '☰';
+        menuToggle.classList.remove('active');
+
+        // После окончания анимации скрытия убираем display: flex
+        navbar.addEventListener('animationend', function handler() {
+            if (navbar.classList.contains('hide')) {
+                navbar.style.display = 'none';
+                navbar.classList.remove('hide');
+            }
+            navbar.removeEventListener('animationend', handler);
+        }, { once: true });
     }
 }
 

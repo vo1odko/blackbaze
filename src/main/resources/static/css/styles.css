@@ -31,28 +31,28 @@ body {
   z-index :1 ;/* На переднем плане*/
 }
 
-nav.show {
-  display:flex !important ;/* Включаем отображение при разворачивании */
-  animation-name : slideDown ;/* Название анимации */
-  animation-duration : .3s ;/* Длительность анимации */
-}
-
 /* Анимация развертывания меню вниз */
 @keyframes slideDown {
-  from { opacity :0 ; transform : translateY(-10px); }
-  to { opacity :1 ; transform : translateY(0); }
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Анимация сворачивания меню вверх */
-nav.hide {
-  display:flex !important ;
-  transform-origin:center top ;
-  animation-name : slideUp ;
-  animation-duration :.3s ;
+@keyframes slideUp {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-10px); }
 }
-@keyframes slideUp{
-  from{opacity :1 ;transform :translateY(0);}
-  to{opacity :0 ;transform :translateY(-10px);}
+
+/* Показываем меню с анимацией */
+nav.show {
+  display: flex;
+  animation: slideDown 0.3s forwards;
+}
+
+/* Скрываем меню с анимацией */
+nav.hide {
+  display: flex;
+  animation: slideUp 0.3s forwards;
 }
 
 /* Кнопка переключения активного состояния */
@@ -75,11 +75,11 @@ nav.hide {
 }
 
 nav {
-  display: flex;
+  display: none; /* Скрываем навигацию по умолчанию на мобильных устройствах */
   justify-content: center;
   width: 100%;
   padding: 10px 0;
-  display: none; /* Скрываем навигацию по умолчанию на мобильных устройствах */
+  will-change: transform, opacity;
 }
 
 nav a {
@@ -107,6 +107,7 @@ section {
   position: absolute; /* Абсолютное позиционирование */
   top: 10px; /* Отступ сверху */
   right: 20px; /* Отступ справа */
+  transition: transform 0.3s ease;
 }
 
 #services {

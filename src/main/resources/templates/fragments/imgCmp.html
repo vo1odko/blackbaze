@@ -1,15 +1,15 @@
 <div th:fragment="cmp(imgBefore, imgAfter)" class="img-comp-container">
     <div class="img-comp-base">
-        <img th:src="${imgBefore ?: '/images/okak.jpg'}"
+        <img th:src="${imgBefore ?: '/images/default.png'}"
              loading="lazy"
              alt="Фото до обработки"
-             onerror="this.src='/images/okak.jpg'" />
+             onerror="this.src='/images/default.png'" />
     </div>
     <div class="img-comp-overlay">
-        <img th:src="${imgAfter ?: '/images/okak.jpg'}"
+        <img th:src="${imgAfter ?: '/images/default.png'}"
              loading="lazy"
              alt="Фото после обработки"
-             onerror="this.src='/images/okak.jpg'" />
+             onerror="this.src='/images/default.png'" />
     </div>
     <div class="img-comp-slider-wrapper">
         <div class="img-comp-slider"></div>

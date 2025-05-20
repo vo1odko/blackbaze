@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -18,19 +17,6 @@ public class AdviceService {
 
     public AdviceService(AdviceRepository adviceRepository) {
         this.adviceRepository = adviceRepository;
-    }
-
-    public List<AdviceEntity> getAllServices() {
-        return adviceRepository.findAll();
-    }
-
-    public AdviceEntity getServiceById(String id) {
-        return adviceRepository.findById(id).orElse(null);
-    }
-
-    public void deleteService(String id) {
-        logger.info("Deleting service with ID: {}", id);
-        adviceRepository.deleteById(id);
     }
 
     public Map<String, String> getAdviceForPage(String page) {
@@ -59,13 +45,5 @@ public class AdviceService {
         data.put("imgBefore", service.getImgBefore());
         data.put("imgAfter", service.getImgAfter());
         return data;
-    }
-
-    public List<AdviceEntity> getAllCase() {
-        return adviceRepository.findAll();
-    }
-
-    public AdviceEntity getCaseById(String caseId) {
-        return adviceRepository.findById(caseId).orElse(null);
     }
 }
